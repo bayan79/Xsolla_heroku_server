@@ -16,7 +16,9 @@ import pandas as pd
 import numpy as np
 import pickle
 from nltk.stem.porter import *
-from nltk.stem import WordNetLemmatizer
+
+# needs a lot of memory
+# from nltk.stem import WordNetLemmatizer
 
 
 RANDOM_STATE = 42
@@ -57,7 +59,7 @@ def get_sw(languages):
     return sw
 
 
-def get_baser(base='lem'):
+def get_baser(base='stem'):
     """Choose method of word basing
     base: string, 'lem' or 'stem'
     """
@@ -65,8 +67,9 @@ def get_baser(base='lem'):
         stemming = PorterStemmer()
         basing_func = stemming.stem
     elif base == 'lem':
-        lemmatizer = WordNetLemmatizer()
-        basing_func = lemmatizer.lemmatize
+        raise Exception("Please, choose stemmer")
+        # lemmatizer = WordNetLemmatizer()
+        # basing_func = lemmatizer.lemmatize
     
     return basing_func
 

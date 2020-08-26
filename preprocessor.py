@@ -11,7 +11,7 @@ from libherokuserver import *
 class Preprocessor():
     """Class created to be able to pickle"""
 
-    def __init__(self, frac=0.03, word_base='lem', top_words_count=1000, test_total_ratio=0.2):
+    def __init__(self, frac=0.03, word_base='stem', top_words_count=1000, test_total_ratio=0.2):
         self.frac=frac
         self.word_base=word_base
         self.top_words_count=top_words_count
@@ -36,7 +36,7 @@ class Preprocessor():
             'russian',
             'chinees'
         ])
-        self.baser = get_baser('lem')
+        self.baser = get_baser(word_base)
     
     
         # base message words
