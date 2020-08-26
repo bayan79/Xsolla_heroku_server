@@ -4,6 +4,9 @@ import numpy as np
 import pandas as pd
 import pickle
 
+import nltk
+nltk.download('stopwords')
+# nltk.download('word')
 
 
 from flask import Flask
