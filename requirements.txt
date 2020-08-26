@@ -16,3 +16,4 @@ lightgbm==2.2.3
 scikit-learn
 imblearn
 nltk
+sumy
