@@ -64,7 +64,7 @@ def registration():
         getData = request.get_data()
         json_params = json.loads(getData) 
         message = json_params['user_message']
-        
+        resp['_message'] = message
         if not clear_message(message):
             return {
                 'message':'ok',
@@ -77,7 +77,8 @@ def registration():
         resp['category'] = ['afs', 'other', 'ps'][np.argmax(pred)]
 
     except Exception as e: 
-        resp['message'] = "Sorry, we are already working on error!!! Take a rest and drink tea :)"
+        # print(str(e))
+        resp['message'] = str(e) # "Sorry, we are already working on error!!! Take a rest and drink tea :)"
       
     response = jsonify(resp)
     
