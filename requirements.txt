@@ -17,3 +17,4 @@ scikit-learn
 imblearn
 nltk
 sumy
+stop_words
